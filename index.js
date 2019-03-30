@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://drisser:DJR390@ds161764.mlab.com:61764/your-project', {useNewUrlParser: true});
+require('dotenv').config();
+mongoose.connect(process.env.mongodburi, {useNewUrlParser: true});
 
 const bodyParser = require("body-parser");
 const app = express();
